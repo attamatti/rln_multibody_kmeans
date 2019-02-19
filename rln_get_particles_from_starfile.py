@@ -29,10 +29,11 @@ def read_starfile_new(f):
 #---------------------------------------------------------------------------------------------#
 
 
-
-labels,header,data = read_starfile_new(sys.argv[1])
-parts_list = open(sys.argv[2],'r').readlines()
-
+try:
+	labels,header,data = read_starfile_new(sys.argv[1])
+	parts_list = open(sys.argv[2],'r').readlines()
+except:
+	sys.exit('\nUSAGE: rln_get_particles_from_starfile.py <data star file> <parts list file>')
 
 output = open('KMclass_{0}.star'.format(sys.argv[2].split('_')[0]),'w')
 for i in header:
