@@ -59,6 +59,9 @@ for i in range(count):
 	linex = [i,i]
 	liney = [mean+stdev,mean-stdev]
 	plt.plot(linex,liney)
+	plt.xlabel('class')
+	plt.title('{0}'.format(sys.argv[1].split('.')[0]))
+	plt.ylabel('eigenvalue')
 	plt.savefig('EC_{0}.png'.format(sys.argv[1].split('.')[0]))
 	print i	
 	print len(sum1)
