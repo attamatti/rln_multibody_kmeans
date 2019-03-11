@@ -46,46 +46,51 @@ elif sys.argv[1].split('.')[-1] == 'star':
 	labels,header,data = read_starfile_new(sys.argv[1])
 	for i in data:
 		vals.append(evsdic[i[labels['_rlnImageName']]])
-
 sortedvals = vals[0]
 count = len(vals[0])
 
 
 sum1 = [float(x[0]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,1)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 sum1 = [float(x[1]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,2)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 sum1 = [float(x[2]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,3)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 sum1 = [float(x[3]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,4)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 sum1 = [float(x[4]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,5)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 sum1 = [float(x[5]) for x in vals]
+bins = range(int(min(sum1)),int(max(sum1)))
 plt.subplot(3,2,6)
 axes = plt.gca()
 axes.set_xlim([-15,15])
-plt.hist(sum1)
+plt.hist(sum1,bins=bins)
 
 
 plt.savefig('EC_{0}.png'.format(sys.argv[1].split('.')[0]))
