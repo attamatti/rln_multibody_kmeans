@@ -51,6 +51,8 @@ sortedvals = vals[0]
 count = len(vals[0])
 
 
+
+
 for i in range(count):
 	sum1 = [float(x[i]) for x in vals]
 	mean = np.mean(sum1)
@@ -59,12 +61,12 @@ for i in range(count):
 	linex = [i,i]
 	liney = [mean+stdev,mean-stdev]
 	plt.plot(linex,liney)
-	plt.xlabel('class')
+	plt.xlabel('principal component')
 	plt.title('{0}'.format(sys.argv[1].split('.')[0]))
 	plt.ylabel('eigenvalue')
 	plt.savefig('EC_{0}.png'.format(sys.argv[1].split('.')[0]))
-	print i	
-	print len(sum1)
-	print mean
-	print stdev
+	print('principal component',i)	
+	print('mean',mean)
+	print('stdev',stdev)
+print('#particles',len(vals))
 
